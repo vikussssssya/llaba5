@@ -1,0 +1,121 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Заголовок -->
+
+    <!-- Поле для ввода ID журнала -->
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="608dp"
+        android:text="Научно-технический вестник"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Кнопка загрузки -->
+
+    <!-- Кнопка для просмотра -->
+
+    <EditText
+        android:id="@+id/etJournalId"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="533dp"
+        android:hint="Введите ID журнала"
+        android:inputType="number"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/btnDownload"
+        android:layout_width="411dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="454dp"
+        android:backgroundTint="#90ee90"
+        android:enabled="true"
+        android:onClick="downloadFile"
+        android:text="Скачать"
+        android:textColor="#FFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <!-- Кнопка удаления -->
+    <Button
+        android:id="@+id/btnView"
+        android:layout_width="411dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="384dp"
+        android:backgroundTint="#F6BE00"
+        android:enabled="false"
+        android:onClick="openFile"
+        android:text="Смотреть"
+        android:textColor="#FFF"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Всплывающее окно -->
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="312dp"
+        android:backgroundTint="#F44336"
+        android:enabled="false"
+        android:onClick="deleteFile"
+        android:text="Удалить"
+        android:textColor="#FFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/popupContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Чекбокс для не показывать снова -->
+            <CheckBox
+                android:id="@+id/cbDontShowAgain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Не показывать снова" />
+
+            <!-- Кнопка "OK" -->
+            <Button
+                android:id="@+id/btnOk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onPopupOkClick"
+                android:text="OK" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="162dp"
+        tools:layout_editor_absoluteY="536dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
